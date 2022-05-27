@@ -3,6 +3,7 @@ import React from 'react';
 import './App.css';
 import Home from "./pages/Home";
 import {Routes, Route, BrowserRouter} from "react-router-dom";
+import Counter from "./pages/Counter";
 
 // function App() {
 //   return (
@@ -30,6 +31,7 @@ const App = () => {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Home/>}/>
+                <Route path="/Counter" element={<Counter/>}/>
             </Routes>
         </BrowserRouter>
     </>
