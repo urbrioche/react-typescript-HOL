@@ -9,12 +9,12 @@ const Counter = () => {
         setCount(count + 1);
         // 這個範例是故意這樣寫
         // eslint-disable-next-line
-    }, [])
+    }, []);
 
     useEffect(() => {
         setCount1(prev => prev + 1);
         setCount1(prev => prev + 1);
-    }, [])
+    }, []);
 
     return <>
         <h2>useState 經典範例</h2>
@@ -36,7 +36,7 @@ const Counter = () => {
         <div style={{paddingTop: '5px'}}>
             Count1 = {count1}
         </div>
-    </>
-}
+    </>;
+};
 
 export default Counter;

@@ -4,6 +4,7 @@ import './App.css';
 import Home from "./pages/Home";
 import {Routes, Route, BrowserRouter} from "react-router-dom";
 import Counter from "./pages/Counter";
+import ChildComponentRender from "./pages/ChildComponentRender";
 
 // function App() {
 //   return (
@@ -31,10 +32,11 @@ const App = () => {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Home/>}/>
-                <Route path="/Counter" element={<Counter/>}/>
+                <Route path="/counter" element={<Counter/>}/>
+                <Route path="/child-component-render" element={<ChildComponentRender/>}/>
             </Routes>
         </BrowserRouter>
-    </>
-}
+    </>;
+};
 
 export default App;
