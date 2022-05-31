@@ -4,6 +4,7 @@ import './App.css';
 import Home from "./pages/Home";
 import {Routes, Route, BrowserRouter} from "react-router-dom";
 import Counter from "./pages/Counter";
+import CounterRedux from "./pages/CounterRedux/Counter";
 import ChildComponentRender from "./pages/ChildComponentRender";
 
 // function App() {
@@ -33,6 +34,7 @@ const App = () => {
             <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/counter" element={<Counter/>}/>
+                <Route path="/counter-redux" element={<CounterRedux/>}/>
                 <Route path="/child-component-render" element={<ChildComponentRender/>}/>
             </Routes>
         </BrowserRouter>
