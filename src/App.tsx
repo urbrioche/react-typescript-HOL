@@ -6,6 +6,7 @@ import {Routes, Route, BrowserRouter} from "react-router-dom";
 import Counter from "./pages/Counter";
 import CounterRedux from "./pages/CounterRedux/Counter";
 import ChildComponentRender from "./pages/ChildComponentRender";
+import PostList from "./pages/Post/PostList";
 
 // function App() {
 //   return (
@@ -36,6 +37,7 @@ const App = () => {
                 <Route path="/counter" element={<Counter/>}/>
                 <Route path="/counter-redux" element={<CounterRedux/>}/>
                 <Route path="/child-component-render" element={<ChildComponentRender/>}/>
+                <Route path="/post-list" element={<PostList/>}/>
             </Routes>
         </BrowserRouter>
     </>;
