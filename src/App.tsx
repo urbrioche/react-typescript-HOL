@@ -7,6 +7,10 @@ import Counter from "./pages/Counter";
 import CounterRedux from "./pages/CounterRedux/Counter";
 import ChildComponentRender from "./pages/ChildComponentRender";
 import PostList from "./pages/Post/PostList";
+import Problem from "./pages/OverreactedExample/BeforeYouMemo/Problem";
+import Solution1 from "./pages/OverreactedExample/BeforeYouMemo/Solution1";
+import Solution2 from "./pages/OverreactedExample/BeforeYouMemo/Solution2";
+
 
 // function App() {
 //   return (
@@ -38,6 +42,9 @@ const App = () => {
                 <Route path="/counter-redux" element={<CounterRedux/>}/>
                 <Route path="/child-component-render" element={<ChildComponentRender/>}/>
                 <Route path="/post-list" element={<PostList/>}/>
+                <Route path="/before-you-memo/problem" element={<Problem/>}/>
+                <Route path="/before-you-memo/solution1" element={<Solution1/>}/>
+                <Route path="/before-you-memo/solution2" element={<Solution2/>}/>
             </Routes>
         </BrowserRouter>
     </>;
