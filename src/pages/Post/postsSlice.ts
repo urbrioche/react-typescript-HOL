@@ -1,4 +1,8 @@
 import {createSlice} from "@reduxjs/toolkit";
+import {RootState} from "../../app/store";
+// You can safely import the RootState type from the store file here. 
+// It's a circular import, but the TypeScript compiler can correctly handle that for types. 
+// This may be needed for use cases like writing selector functions.
 
 const initialState = [
     {
@@ -20,6 +24,8 @@ const postSlice = createSlice({
     }
 );
 
-export const selectAllPosts = (state: any) => state.posts;
+// reference: https://redux.js.org/usage/usage-with-typescript#define-root-state-and-dispatch-types
+// export const selectAllPosts = (state: any) => state.posts;
+export const selectAllPosts = (state: RootState) => state.posts;
 
 export default postSlice.reducer;
