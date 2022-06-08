@@ -1,0 +1,17 @@
+.main {
+    max-width: 500px;
+    margin: auto;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+input,
+textarea,
+button,
+select {
+    font: inherit;
+    margin-bottom: 1em;
+}

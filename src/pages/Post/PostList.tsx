@@ -1,8 +1,13 @@
 import {useAppSelector} from "../../app/store";
+import {selectAllPosts} from "./postsSlice";
 
 const PostList = () => {
-    const posts = useAppSelector(state => state.posts);
+    // 第一版寫法
     // const posts = useSelector<RootState, { id: string, title: string, content: string }[]>(state => state.posts);
+    // 查了一下官網的建議做法 for TypeScript
+    // const posts = useAppSelector(state => state.posts);
+    // 作者建議在slice export一個變出，這樣如果state的shape改變了，只要改slice就好，不用每個component都改
+    const posts = useAppSelector(selectAllPosts);
     const renderPosts = posts.map(post => (
         <article key={post.id}>
             <h3>{post.title}</h3>

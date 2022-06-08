@@ -20,12 +20,17 @@ const initialState = [
 const postSlice = createSlice({
         name: 'posts',
         initialState,
-        reducers: {},
+        reducers: {
+            postAdded(state, action) {
+                state.push(action.payload);
+            }
+        },
     }
 );
 
 // reference: https://redux.js.org/usage/usage-with-typescript#define-root-state-and-dispatch-types
 // export const selectAllPosts = (state: any) => state.posts;
 export const selectAllPosts = (state: RootState) => state.posts;
+export const {postAdded} = postSlice.actions;
 
 export default postSlice.reducer;

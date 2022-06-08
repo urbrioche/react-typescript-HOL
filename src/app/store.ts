@@ -1,7 +1,7 @@
 import {configureStore} from "@reduxjs/toolkit";
 import counterReducer from "../pages/CounterRedux/conterSlice";
 import postsReducer from "../pages/Post/postsSlice";
-import {TypedUseSelectorHook, useSelector} from "react-redux";
+import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
 
 export const store = configureStore({
     reducer: {
@@ -18,3 +18,4 @@ export type AppDispatch = typeof store.dispatch
 // https://redux.js.org/usage/usage-with-typescript#define-typed-hooks
 // 加了這個呼叫端在使用useSelector時，就不用一直要宣告型別
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
+export const useAppDispatch = () => useDispatch<AppDispatch>();
