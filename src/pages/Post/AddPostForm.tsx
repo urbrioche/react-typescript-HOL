@@ -1,5 +1,5 @@
-import {ChangeEvent, ChangeEventHandler, useState} from "react";
-import {useAppDispatch, useAppSelector} from "../../app/store";
+import {ChangeEvent, useState} from "react";
+import {useAppDispatch} from "../../app/hooks";
 import {nanoid} from "@reduxjs/toolkit";
 import {postAdded} from "./postsSlice";
 

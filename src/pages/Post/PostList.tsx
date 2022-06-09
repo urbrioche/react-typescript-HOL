@@ -1,4 +1,4 @@
-import {useAppSelector} from "../../app/store";
+import {useAppSelector} from "../../app/hooks";
 import {selectAllPosts} from "./postsSlice";
 
 const PostList = () => {
