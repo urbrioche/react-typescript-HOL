@@ -1,6 +1,5 @@
 import {ChangeEvent, useState} from "react";
 import {useAppDispatch} from "../../app/hooks";
-import {nanoid} from "@reduxjs/toolkit";
 import {postAdded} from "./postsSlice";
 
 const AddPostForm = () => {
@@ -13,11 +12,7 @@ const AddPostForm = () => {
     const onContentChanged = (e: ChangeEvent<HTMLTextAreaElement>) => setContent(e.target.value);
     const onSavePostClicked = () => {
         if (title && content) {
-            dispatch(postAdded({
-                id: nanoid(),
-                title,
-                content,
-            }));
+            dispatch(postAdded(title, content));
             setTitle('');
             setContent('');
         }

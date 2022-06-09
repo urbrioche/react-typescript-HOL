@@ -1,4 +1,4 @@
-import {createSlice} from "@reduxjs/toolkit";
+import {createSlice, nanoid, PayloadAction} from "@reduxjs/toolkit";
 import {RootState} from "../../app/store";
 // You can safely import the RootState type from the store file here. 
 // It's a circular import, but the TypeScript compiler can correctly handle that for types. 
@@ -21,8 +21,19 @@ const postSlice = createSlice({
         name: 'posts',
         initialState,
         reducers: {
-            postAdded(state, action) {
-                state.push(action.payload);
+            postAdded: {
+                reducer(state, action: PayloadAction<{ id: string, title: string, content: string }>) {
+                    state.push(action.payload);
+                },
+                prepare(title: string, content: string) {
+                    return {
+                        payload: {
+                            id: nanoid(),
+                            title,
+                            content
+                        }
+                    };
+                }
             }
         },
     }
