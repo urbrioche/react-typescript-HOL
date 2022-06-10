@@ -1,8 +1,17 @@
 import {createSlice, nanoid, PayloadAction} from "@reduxjs/toolkit";
 import {RootState} from "../../app/store";
+import {sub} from "date-fns";
 // You can safely import the RootState type from the store file here. 
 // It's a circular import, but the TypeScript compiler can correctly handle that for types. 
 // This may be needed for use cases like writing selector functions.
+
+interface PostInfo {
+    id: string;
+    title: string;
+    content: string;
+    userId: string;
+    date: string;
+}
 
 const initialState = [
     {
@@ -10,12 +19,14 @@ const initialState = [
         title: 'Learning Redux Toolkit',
         content: "I've heard good things.",
         userId: '',
+        date: sub(new Date(), {minutes: 10}).toISOString()
     },
     {
         id: '2',
         title: 'Slices...',
         content: "The more I say slice, the more I want pizza.",
         userId: '',
+        date: sub(new Date(), {minutes: 5}).toISOString()
     }
 ];
 
@@ -24,7 +35,7 @@ const postSlice = createSlice({
         initialState,
         reducers: {
             postAdded: {
-                reducer(state, action: PayloadAction<{ id: string, title: string, content: string, userId: string }>) {
+                reducer(state, action: PayloadAction<PostInfo>) {
                     state.push(action.payload);
                 },
                 prepare(title: string, content: string, userId: string) {
@@ -33,6 +44,7 @@ const postSlice = createSlice({
                             id: nanoid(),
                             title,
                             content,
+                            date: new Date().toISOString(),
                             userId,
                         }
                     };
