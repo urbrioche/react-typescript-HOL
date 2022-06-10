@@ -2,6 +2,7 @@ import {useAppSelector} from "../../app/hooks";
 import {selectAllPosts} from "./postsSlice";
 import PostAuthor from "./PostAuthor";
 import TimeAgo from "./TImeAgo";
+import ReactionButtons from "./ReactionButtons";
 
 const PostList = () => {
     // 第一版寫法
@@ -20,6 +21,7 @@ const PostList = () => {
                 <PostAuthor userId={post.userId}/>
                 <TimeAgo timestamp={post.date}/>
             </p>
+            <ReactionButtons post={post}/>
         </article>
     ));
     return <>
